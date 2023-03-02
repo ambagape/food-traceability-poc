@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('farms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->decimal('latitude')->nullable();
+            $table->decimal('latitue')->nullable();
             $table->decimal('longitude')->nullable();
             $table->foreignId('party_id')->constrained();
             $table->timestamps();
