@@ -62,7 +62,7 @@ class Product extends Resource
             Date::make('Production Date')
                 ->sortable(),
 
-            Date::make('Expiration Date')->sortable(),
+            Date::make('Expiry Date')->sortable(),
 
             Text::make('Weight'),
 
