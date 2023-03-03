@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -72,7 +73,8 @@ class Product extends Resource
             HasMany::make('Inputs', 'inputs', self::class),
             HasMany::make('Outputs', 'outputs', self::class),
 
-
+            BelongsTo::make('Party','party',Party::class)
+            ->sortable()
 
 
         ];
