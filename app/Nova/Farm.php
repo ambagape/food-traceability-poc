@@ -24,7 +24,7 @@ class Farm extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'address';
 
     /**
      * The columns that should be searched.
@@ -33,7 +33,7 @@ class Farm extends Resource
      */
     public static $search = [
         'id',
-        'name',
+        'address',
     ];
 
     /**
@@ -47,7 +47,7 @@ class Farm extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make('Address')
                 ->sortable()
                 ->rules('required', 'max:255'),
 

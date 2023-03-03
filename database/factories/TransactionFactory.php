@@ -19,13 +19,14 @@ class TransactionFactory extends Factory
      */
     public function definition(): array
     {
+        $tags = Tag::all();
         return [
             'transporter_name' => fake()->name(),
             'transporter_phone' => fake()->phoneNumber(),
             'party_id' => Party::factory()->createOne()->id,
             'product_id' => Product::factory()->createOne()->id,
             'supplier_id' => Party::factory()->createOne()->id,
-            'tag_id' => Tag::factory()->createOne()->id
+            'tag_id' => $tags[fake()->numberBetween(0, $tags->count() - 1)]->id
         ];
     }
 }

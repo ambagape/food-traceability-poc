@@ -18,15 +18,17 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $foods = ['Orange','Apple', 'Yam', 'Grape'];
+        $party = Party::factory()->createOne();
         return [
-            'name' => fake()->name(),
+            'name' => $foods[fake()->numberBetween(0,3)],
             'lot_number' => fake()->randomNumber(),
             'description' => fake()->text(),
             'production_date' => fake()->date(),
             'expiry_date' => fake()->date(),
-            'weight' => fake()->randomNumber(),
-            'origin' => fake()->name(),
-            'party_id' => Party::factory()->createOne()->id
+            'weight' => fake()->randomNumber(2, true),
+            'origin' => $party->name,
+            'party_id' => $party->id
         ];
     }
 }

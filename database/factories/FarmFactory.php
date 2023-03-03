@@ -19,7 +19,7 @@ class FarmFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'address' => fake()->streetAddress(),
             'longitude' => fake()->longitude(),
             'latitude' => fake()->latitude(),
             'party_id' => Party::factory()->createOne()->id,

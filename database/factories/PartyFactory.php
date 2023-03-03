@@ -17,12 +17,13 @@ class PartyFactory extends Factory
      */
     public function definition(): array
     {
+        $tags = Tag::all();
         return [
             'name' => fake()->name(),
             'address' => fake()->address(),
             'phone' => fake()->phoneNumber(),
             'email' => fake()->email(),
-            'tag_id' => Tag::factory()->createOne()->id
+            'tag_id' => $tags[fake()->numberBetween(0, $tags->count()-1)]->id
         ];
     }
 }
