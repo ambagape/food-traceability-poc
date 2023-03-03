@@ -19,7 +19,7 @@ class Main extends Dashboard
     public function cards()
     {
         return [
-            (new NewFarms)->width('1/2'), (new NewProducts)->width('1/2')
+            (new NewFarms)->width('1/2'), new NewProducts, new NewTransactions
         ];
     }
 }

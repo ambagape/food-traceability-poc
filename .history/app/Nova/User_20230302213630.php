@@ -13,7 +13,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 class User extends Resource
 {
 
-    public static $group = 'Other';
+    public static $group = 'Others';
 
     /**
      * The model the resource corresponds to.

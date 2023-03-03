@@ -10,8 +10,7 @@ class Product extends Model
     use HasFactory;
 
     protected $casts = [
-        'production_date' => 'date',
-        'expiry_date' => 'date'
+        'production_date' => 'date', 'expiry_date' => 'date'
     ];
 
     function party(){

@@ -14,12 +14,6 @@ class Transaction extends Model
         return $this->belongsTo(Tag::class);
     }
 
-    function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
-
-
     function supplier()
     {
         return $this->belongsTo(Party::class, 'supplier_id');
