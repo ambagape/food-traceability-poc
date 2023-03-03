@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Product extends Model
 {
-    use HasFactory, InteractsWithMedia;
+    //use HasFactory, InteractsWithMedia;
 
     protected $casts = [
         'production_date' => 'date',
