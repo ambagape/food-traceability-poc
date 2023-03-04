@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use DmitryBubyakin\NovaMedialibraryField\Fields\Medialibrary;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\HasMany;
@@ -47,6 +48,8 @@ class Party extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Medialibrary::make('Images', 'parties', 'public'),
 
             Text::make('Name')
                 ->sortable()

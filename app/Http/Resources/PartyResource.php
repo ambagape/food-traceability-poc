@@ -14,6 +14,7 @@ class PartyResource extends JsonResource
             'address' => $this->address,
             'email' => $this->email,
             'phone' => $this->phone,
+            'media' => $this->getMedia('parties'),
         ];
     }
 }

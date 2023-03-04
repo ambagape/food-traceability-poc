@@ -2,10 +2,12 @@
 
 namespace App\Nova;
 
+use DmitryBubyakin\NovaMedialibraryField\Fields\Medialibrary;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -46,7 +48,10 @@ class Product extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+
+            Text::make('ID')->sortable()->rules('required'),
+
+            Medialibrary::make('Images', 'products', 'public'),
 
             Text::make('Name')
                 ->sortable()
@@ -73,8 +78,8 @@ class Product extends Resource
             HasMany::make('Inputs', 'inputs', self::class),
             HasMany::make('Outputs', 'outputs', self::class),
 
-            BelongsTo::make('Party','party',Party::class)
-            ->sortable()
+            BelongsTo::make('Party', 'party', Party::class)
+                ->sortable()
 
 
         ];

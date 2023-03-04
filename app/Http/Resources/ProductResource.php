@@ -18,6 +18,7 @@ class ProductResource extends JsonResource
             'weight' => $this->weight,
             'origin' => $this->origin,
             'party' => PartyResource::make($this->whenLoaded('party')),
+            'media' => $this->getMedia('products'),
         ];
     }
 }
