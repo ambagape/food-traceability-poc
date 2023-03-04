@@ -61,6 +61,9 @@ class Party extends Resource
                 ->creationRules('unique:parties,email,{{resourceId}}')
                 ->rules('required'),
 
+            Text::make('Phone')
+                ->rules('max:254'),
+
             Text::make('Address')
                 ->rules('max:254'),
 
