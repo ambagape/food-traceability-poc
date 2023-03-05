@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Product extends Resource
@@ -49,7 +50,7 @@ class Product extends Resource
     {
         return [
 
-            Text::make('ID')->sortable()->rules('required'),
+            Text::make('ID')->sortable(),
 
             Medialibrary::make('Images', 'products', 'public'),
 
@@ -62,17 +63,22 @@ class Product extends Resource
                 ->creationRules('unique:products,lot_number')
                 ->rules('required'),
 
-            Text::make('Description')
-                ->rules('max:254'),
+            Textarea::make('Description')
+                ->rules('required'),
 
             Date::make('Production Date')
+                ->rules('required')
                 ->sortable(),
 
-            Date::make('Expiry Date')->sortable(),
+            Date::make('Expiry Date')
+                ->rules('required')
+                ->sortable(),
 
-            Text::make('Weight'),
+            Text::make('Weight')->rules('required'),
 
-            Text::make('Origin'),
+
+            Text::make('Origin')
+                ->rules('required'),
 
             HasMany::make('Transactions', 'transactions', Transaction::class),
             HasMany::make('Inputs', 'inputs', self::class),
