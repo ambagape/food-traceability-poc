@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Farm extends Model
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory;
 
     function party(){
         return $this->belongsTo(Party::class);
