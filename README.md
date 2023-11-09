@@ -1,4 +1,4 @@
-This is a POC for a proposed food traceability system for the Nigerian Goverment. This is the repository for the API and back-office.
+This is a POC for a proposed food traceability system for the Nigerian Goverment. This is the repository for the API and back-office. The back-office is built with Nova. So, ensure you have a valid Nova key to use before installing the dependencies.
 
 
 #To run this:
